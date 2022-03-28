@@ -26,6 +26,11 @@ tdado pop(tpilha *p){
 	p->topo--; 
 	return aux; 
 }
+
+tdado peek (tpilha p){
+return p.pilha[p.topo];
+}
+
 //--------------------------
 int isEmpty (tpilha p) //p passagem de valor *p (passagem por referencia) 
 {  
@@ -44,6 +49,7 @@ void mostraPilha (tpilha p)
 	printf ("\n");
 }
 //--------------------------
+
 int menu(){
 	int op;
 	printf("*** Estrutura de Dados I - Pilha Estatica ****\n");
@@ -78,8 +84,15 @@ int main (){
 			}//fim do if vazio
 			else 
 			printf ("Pilha Vazia :( \n");
-
 			break; 
+			
+			case 3: if (!isEmpty(p1)){
+			x=peek(p1);
+			printf ("O valor do topo:%d",x);
+			}
+			else 
+			("O topo vazio");
+			break;
 			case 0: printf("Saindo....;) \n");
 		} //fim do switch
 		getch(); //pode ser utilizado o getch ou o system pause
